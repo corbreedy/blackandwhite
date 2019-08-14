@@ -1,17 +1,27 @@
 extends KinematicBody2D
 
 
-var motion = Vector2(10,10)
+var velocity = Vector2()
+var speed=10000
 
 
 func _ready():
-	move_and_slide(motion)
+	move_and_slide(Vector2(100,100))
 
 func get_input():
-	if Input.is_action_pressed('right'):
-		motion.x=10
-		motion.y=0
+	var motion =Vector2()
+	if Input.is_action_pressed('ui_right'):
+		motion.x+=1
+	if Input.is_action_pressed('ui_left'):
+		motion.x-=1
+	if Input.is_action_pressed('ui_up'):
+		motion.x-=1
+	if Input.is_action_pressed('ui_down'):
+		motion.y+=1
+	velocity=motion.normalized()*speed
+	
 	
 func _physics_process(delta):
-    get_input()
-    move_and_slide(motion)
+	get_input()
+	move_and_slide(velocity*delta)
+	
