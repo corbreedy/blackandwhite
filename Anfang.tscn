@@ -15,5 +15,5 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="spieler" type="Sprite" parent="KinematicBody2D/CollisionShape2D"]
-position = Vector2( -5, -7 )
+position = Vector2( 0, 1 )
 texture = ExtResource( 2 )

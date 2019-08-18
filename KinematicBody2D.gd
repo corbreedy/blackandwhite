@@ -10,13 +10,13 @@ func _ready():
 
 func get_input():
 	var motion =Vector2()
-	if Input.is_action_pressed('ui_right'):
+	if Input.is_action_pressed('right'):
 		motion.x+=1
-	if Input.is_action_pressed('ui_left'):
+	if Input.is_action_pressed('left'):
 		motion.x-=1
-	if Input.is_action_pressed('ui_up'):
+	if Input.is_action_pressed('up'):
 		motion.y-=1
-	if Input.is_action_pressed('ui_down'):
+	if Input.is_action_pressed('down'):
 		motion.y+=1
 	velocity=motion.normalized()*speed
 	
